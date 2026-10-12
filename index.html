@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPYOW</title>
+  <!-- Connect the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ================= HEADER + NAVIGATION BAR ================= -->
+  <!-- HCI (Visibility + Easy Navigation): the menu stays at the top while scrolling -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Website title / logo -->
+      <a class="logo" href="#home">
+        <img src="images/logo.jpg" alt="LPYOW crest">
+        <span>LPYOW<small>LYCEUM PORTAL: YOUR ONLINE WORLD</small></span>
+      </a>
+
+      <!-- Navigation bar -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#announcements">Announcements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HOME ================= -->
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Welcome to LPYOW</p>
+        <!-- HCI (Visual Hierarchy): the biggest text is the most important message -->
+        <h1>Ready. Set. <em>Lead.</em></h1>
+        <p class="lead">LPYOW is a campus website designed for the students and community of Lyceum of the Philippines University–Cavite. It serves as a centralized platform for accessing campus announcements, upcoming events, student activities, academic resources, and other essential university information. Its goal is to make campus life more connected, accessible, and convenient through technology.</p>
+        <!-- Buttons -->
+        <a class="button" href="#services">Explore Services</a>
+        <a class="button button-outline" href="#contact">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2>This is who we are</h2>
+          <p>A connected and thriving digital campus, LPYOW (Lyceum Portal: Your Online World) was created to bring the Lyceum of the Philippines University–Cavite community closer together. Through technology, we make campus information more accessible and student life more connected.</p>
+          <p>We believe that access to information plays an important role in every student’s university journey. LPYOW provides a convenient space where students can discover campus announcements, upcoming events, student activities, and essential university information.</p>
+
+          <h3>Our Vision</h3>
+          <p>To become a reliable and accessible digital platform that enhances campus life at LPU Cavite through innovation, connection, and technology. We envision a university community where every student can stay informed, engaged, and connected.</p>
+        </div>
+        <img class="about-photo" src="images/building.jpg" alt="The LPU Cavite campus building under a cloudy sky">
+      </div>
+      <!-- NEW: quick facts (big numbers catch the eye = visual hierarchy) -->
+      <div class="container">
+        <ul class="stats">
+          <li><strong>2008</strong> Year established</li>
+          <li><strong>2030</strong> Accreditation goal</li>
+          <li><strong>5</strong> Mission areas</li>
+          <li><strong>4</strong> Student services</li>
+        </ul>
+
+        <!-- NEW: our mission as a numbered list -->
+        <h3 class="center mission-title">Our Mission</h3>
+        <ol class="mission">
+          <li><span class="num">1</span><div><strong>Accessibility</strong> Makecampus information easy to access and understand</div></li>
+          <li><span class="num">2</span><div><strong>Information</strong> Provide updated announcements, university news, and important campus details</div></li>
+          <li><span class="num">3</span><div><strong>Student engagement</strong> Encourage participation in campus events, activities, and student organizations</div></li>
+          <li><span class="num">4</span><div><strong>Digital innovation</strong> Use technology to improve the way students access campus resources and services</div></li>
+          <li><span class="num">5</span><div><strong>Community connection</strong> Strengthen connections among students and the LPU Cavite community through a centralized digital platform</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- NEW: quote band -->
+    <div class="quote">
+      <p>Our students are people who <em>open minds</em> and <em>create futures</em></p>
+    </div>
+
+    <!-- ================= SERVICES (service cards) ================= -->
+    <section class="section section-beige" id="services">
+      <div class="container">
+        <p class="eyebrow center">What we offer</p>
+        <h2 class="center">Student Services</h2>
+
+        <div class="cards">
+
+          <article class="card">
+            <img src="images/library.jpg" alt="Glass doors of the school library">
+            <div class="card-body">
+              <h3>Library</h3>
+              <p>Books, e-resources and quiet study spaces.</p>
+              <a class="card-link" href="#contact">Ask the Library</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/registrar.jpg" alt="Registrar's office service windows">
+            <div class="card-body">
+              <h3>Registrar</h3>
+              <p>Enrollment, transcripts, certificates and records.</p>
+              <a class="card-link" href="#contact">Ask the Registrar</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/it-support.jpg" alt="Door of the IT office">
+            <div class="card-body">
+              <h3>IT Support</h3>
+              <p>Wi-Fi, student accounts and portal troubleshooting.</p>
+              <a class="card-link" href="#contact">Ask IT Support</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/campus.jpg" alt="Front of the campus building with a staircase">
+            <div class="card-body">
+              <h3>Campus Tour</h3>
+              <p>Explore our buildings and facilities with a campus tour.</p>
+              <a class="card-link" href="#contact">Book a Tour</a>
+            </div>
+          </article>
+
+        </div>
+        <!-- NEW: simple steps (helps users know what to do next) -->
+        <h3 class="center steps-title">Need something from an office? 3 easy steps</h3>
+        <ol class="steps">
+          <li><span class="num">1</span><div><strong>Choose the office</strong> Pick Library, Registrar or IT Support above.</div></li>
+          <li><span class="num">2</span><div><strong>Prepare your details</strong> Have your student number and ID ready.</div></li>
+          <li><span class="num">3</span><div><strong>Send your request</strong> Use the Contact section or visit the office.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ANNOUNCEMENTS ================= -->
+    <section class="section" id="announcements">
+      <div class="container">
+        <p class="eyebrow center">Stay updated</p>
+        <h2 class="center">Announcements</h2>
+
+        <div class="news-list">
+
+          <article class="news">
+            <time datetime="2026-10-22">Oct 22, 2026</time>
+            <h3>Midterm Examination Ends</h3>
+          </article>
+
+          <article class="news">
+            <time datetime="2026-10-10">Oct 10, 2026</time>
+            <h3>Outreach in Bukid Kabataan</h3>
+          </article>
+
+          <article class="news">
+            <time datetime="2026-10-06">Oct 6, 2026</time>
+            <h3>Portal Maintenance Schedule</h3>
+          </article>
+
+        </div>
+        <!-- NEW: upcoming events calendar -->
+        <h3 class="center events-title">Upcoming Events</h3>
+        <ul class="events">
+          <li><span class="date"><strong>16</strong>OCT</span><div><strong>Midterm examinations begin</strong></div></li>
+          <li><span class="date"><strong>20</strong>OCT</span><div><strong>General Assembly for new students</strong></div></li>
+          <li><span class="date"><strong>22</strong>OCT</span><div><strong>Midterm examinations end</strong></div></li>
+          <li><span class="date"><strong>28</strong>OCT</span><div><strong>Community outreach</strong><br>Bukid Kabataan</div></li>
+        </ul>
+        <!-- NEW: event highlights (photos of successful past events) -->
+        <h3 class="center highlights-title">Event Highlights</h3>
+        <p class="center highlights-sub">A look back at our successful outreach programs and events.</p>
+        <div class="highlights">
+
+          <figure class="highlight">
+            <img src="images/outreach.jpg" alt="Students in red and white polo shirts posing with donation baskets and a banner of the NSTP G.I.F.T.S. outreach program">
+            <figcaption>
+              <span class="tag">Outreach</span>
+              <h4>NSTP G.I.F.T.S. Outreach Program</h4>
+              <p>Students shared groceries, food and school items with the community.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="highlight">
+            <img src="images/general-assembly.jpg" alt="Students standing in front of a stage screen showing a coding question during the CCS general assembly">
+            <figcaption>
+              <span class="tag">Event</span>
+              <h4>General Assembly</h4>
+              <p>Students joined a code-reading game at the College of Information Technology and Computer Science assembly.</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section section-beige" id="contact">
+      <div class="container">
+        <p class="eyebrow center">Get in touch</p>
+        <h2 class="center">Contact Us</h2>
+
+        <div class="contact-grid">
+
+          <!-- Basic contact information -->
+          <div class="contact-info">
+            <h3>Campus Information</h3>
+            <p><strong>Address:</strong> LPU Cavite Campus, Cavite, Philippines</p>
+            <p><strong>Phone:</strong> (046) 987-1234</p>
+            <p><strong>Email:</strong> <a href="mailto:lpucavite@edu.ph">lpucavite@edu.ph</a></p>
+            <p><strong>Office hours:</strong> Monday to Friday, 8:00 AM – 4:00 PM</p>
+          </div>
+
+          <!-- HCI (Accessibility): every box has a label -->
+          <form action="mailto:lpucavite@edu.ph" method="post" enctype="text/plain">
+            <h3>Send us a message</h3>
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button class="button" type="submit">Send Message</button>
+          </form>
+
+        </div>
+    
+        <h3 class="center faq-title">Frequently Asked Questions</h3>
+        <div class="faq">
+          <details>
+            <summary>How do I request a transcript or certificate?</summary>
+            <p>Contact the Registrar using the form above or visit the office.</p>
+          </details>
+          <details>
+            <summary>I cannot log in to the student portal. What should I do?</summary>
+            <p>Contact IT Support and give your student number.</p>
+          </details>
+          <details>
+            <summary>What are the library opening hours?</summary>
+            <p>The library follows the office hours above: Monday to Friday, 8:00 AM – 4:00 PM.</p>
+          </details>
+          <details>
+            <summary>Can visitors tour the campus?</summary>
+            <p>Yes. Visitors are welcome. Just tell the security guard at the gate.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Lyceum of the Philippines University – Cavite.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#home" aria-label="Back to top">↑</a>
+
+</body>
+</html>

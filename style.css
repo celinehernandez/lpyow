@@ -1,0 +1,518 @@
+/* =====================================================
+   LPU Cavite Campus Hub - style.css
+   ===================================================== */
+
+/* ---------- 1. COLORS (CONSISTENCY) ----------
+   The same colors are used on the whole website.
+   Change a color here and it changes everywhere.   */
+:root {
+  --red: #9e2a2d;          /* main color */
+  --red-dark: #7d1f22;     /* darker red for hover */
+  --gold: #7a6400;         /* dark gold: white text on it is easy to read */
+  --gold-dark: #5c4a00;
+  --beige: #eeeae5;        /* soft background */
+  --text: #1c1a19;         /* dark text on light background = good contrast */
+}
+
+/* ---------- 2. BASIC SETTINGS ---------- */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;       /* smooth scrolling when a menu link is clicked */
+  scroll-padding-top: 90px;      /* so the sticky menu does not cover the heading */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;   /* easy-to-read body font */
+  font-size: 1.1rem;                           /* big enough text */
+  line-height: 1.7;                            /* space between lines */
+  color: var(--text);
+}
+
+/* ---------- 3. TEXT (VISUAL HIERARCHY) ----------
+   h1 is the biggest, then h2, then h3, then normal text. */
+h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+h1 { font-size: 4.5rem; }
+h2 { font-size: 2.6rem; }
+h3 { font-size: 1.6rem; }
+
+a { color: var(--red); }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;              /* centers the content */
+  padding: 0 24px;             /* space on the left and right */
+}
+
+.center { text-align: center; }
+
+.eyebrow {                      /* small label above a heading */
+  color: var(--red);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin: 0 0 8px 0;
+}
+
+/* ---------- 4. ACCESSIBILITY ---------- */
+/* A clear outline shows keyboard users where they are */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 4px solid #ffbf00;
+  outline-offset: 3px;
+}
+
+/* "Skip to main content" link: hidden until you press the Tab key */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: white;
+  color: var(--red);
+  padding: 10px 16px;
+  z-index: 100;
+  font-weight: bold;
+}
+.skip-link:focus { left: 8px; }
+
+/* ---------- 5. HEADER AND NAVIGATION BAR ----------
+   VISIBILITY + EASY NAVIGATION: always at the top, same on the page. */
+.site-header {
+  background: white;
+  border-bottom: 4px solid var(--red);
+  position: sticky;             /* stays visible while scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;   /* logo left, menu right */
+  align-items: center;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+.logo img { height: 56px; width: auto; }
+.logo small {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.68rem;               /* smaller so the long name fits on one line */
+  color: var(--red);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 16px;              /* big click area = easier to use */
+  color: var(--text);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;   /* smooth change */
+}
+
+/* FEEDBACK: the link changes color when the mouse is over it */
+.nav-links a:hover {
+  background-color: var(--red);
+  color: white;
+}
+
+/* ---------- 6. BUTTONS (CONSISTENCY + FEEDBACK) ---------- */
+.button {
+  display: inline-block;
+  background-color: var(--gold);
+  color: white;
+  padding: 14px 30px;
+  border: 2px solid var(--gold);
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;               
+  margin: 0 12px 12px 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.button:hover {                    
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark);
+  transform: translateY(-3px);
+}
+
+.button:active { transform: translateY(0); }   
+
+.button-outline {                
+  background-color: transparent;
+  border-color: white;
+}
+.button-outline:hover {
+  background-color: white;
+  color: var(--red);
+  border-color: white;
+}
+
+/* ---------- 7. HOME (HERO) ---------- */
+.hero {
+  /* Dark red layer on top of the photo so the white text is easy to read */
+  background-image: linear-gradient(rgba(125, 31, 34, 0.9), rgba(125, 31, 34, 0.9)),
+                    url('images/building.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 120px 0 100px 0;
+}
+.hero .eyebrow { color: white; }
+.hero h1 { margin-bottom: 20px; }
+.lead { font-size: 1.4rem; max-width: 560px; margin: 0 0 30px 0; }
+
+/* ---------- 8. SECTIONS (spacing) ---------- */
+.section { padding: 80px 0; }
+.section-beige { background-color: var(--beige); }
+
+/* ---------- 9. ABOUT ---------- */
+.about-grid {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.about-grid > div { flex: 1; }
+.about-photo { flex: 1; width: 50%; border-radius: 8px; }
+
+/* ---------- 10. SERVICE CARDS ---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;               
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card {
+  flex: 1 1 230px;                 
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* FEEDBACK: the card lifts up when the mouse is over it */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.card-body { padding: 22px; }
+.card-body p { margin-top: 0; }
+
+.card-link {
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: underline;      /* underline = looks like a link */
+}
+.card-link:hover { color: var(--red-dark); text-decoration-thickness: 3px; }
+
+/* ---------- 11. ANNOUNCEMENTS ---------- */
+.news-list { max-width: 800px; margin: 40px auto 0 auto; }
+
+.news {
+  border-left: 6px solid var(--red);
+  background: var(--beige);
+  padding: 20px 26px;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+.news:hover { background-color: #e2dbd3; }
+.news time { color: var(--red); font-weight: bold; font-size: 0.95rem; }
+.news h3 { margin: 4px 0 6px 0; }
+.news p { margin: 0; }
+
+/* ---------- 12. CONTACT AND FORM ---------- */
+.contact-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+.contact-info, form {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+label { display: block; font-weight: bold; margin: 14px 0 4px 0; }
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid #8a8280;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* FEEDBACK: the box you are typing in gets a red border */
+input:focus, textarea:focus { border-color: var(--red); }
+
+form .button { margin-top: 14px; }
+
+/* ---------- 13. FOOTER ---------- */
+.site-footer { background: var(--red); color: white; padding: 28px 0; font-size: 0.95rem; }
+.site-footer a { color: white; font-weight: bold; }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.footer-inner p { margin: 0; }
+
+/* ---------- 14. RESPONSIVE (changes layout on smaller screens) ---------- */
+@media (max-width: 800px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+  .header-inner { flex-direction: column; }
+  .nav-links { flex-wrap: wrap; justify-content: center; }
+  .about-grid, .contact-grid { flex-direction: column; }
+  .about-photo { width: 100%; }
+  .hero { padding: 70px 0; }
+  .section { padding: 56px 0; }
+}
+
+/* Respect people who turn off animations on their device */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* =====================================================
+   NEW ADDITIONS (extra features)
+   ===================================================== */
+
+/* ---------- 15. QUICK FACTS (big numbers) ---------- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 60px 0 50px 0;
+}
+.stats li {
+  flex: 1 1 200px;
+  text-align: center;
+  background: var(--beige);
+  border-top: 5px solid var(--red);
+  border-radius: 8px;
+  padding: 24px 12px;
+  transition: transform 0.2s;
+}
+.stats li:hover { transform: translateY(-4px); }
+.stats strong {                    
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  font-weight: normal;
+  color: var(--red);
+  line-height: 1.1;
+}
+
+/* ---------- 16. NUMBERED LISTS (mission + steps) ---------- */
+.mission, .steps {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 24px auto 0 auto;
+}
+.mission li, .steps li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.num {                             
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+}
+.mission strong, .steps strong { display: block; color: var(--red); }
+.mission-title { margin-top: 10px; }
+.steps-title { margin-top: 70px; }
+
+/* ---------- 17. QUOTE BAND ---------- */
+.quote {
+  background: #c4bbb1;
+  color: var(--text);
+  text-align: center;
+  padding: 70px 24px;
+}
+.quote p {
+  font-family: Georgia, serif;
+  font-size: 2.6rem;
+  line-height: 1.3;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ---------- 18. EVENTS CALENDAR ---------- */
+.events-title { margin-top: 60px; }
+.events {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 24px auto 0 auto;
+}
+.events li {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #d6cfc7;
+  transition: background-color 0.2s;
+}
+.events li:hover { background-color: var(--beige); }   
+.date {                             
+  flex: none;
+  width: 70px;
+  background: var(--red);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.date strong { display: block; font-size: 1.8rem; font-family: Georgia, serif; font-weight: normal; }
+
+/* ---------- 19. FAQ (click to open) ---------- */
+.faq-title { margin-top: 70px; }
+.faq { max-width: 800px; margin: 24px auto 0 auto; }
+.faq details {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.faq summary {
+  cursor: pointer;
+  padding: 18px 22px;
+  font-weight: bold;
+  color: var(--red);
+  border-radius: 8px;
+}
+.faq summary:hover { background-color: #f6efef; }     /* FEEDBACK */
+.faq summary:focus-visible { outline: 4px solid #ffbf00; }
+.faq details[open] summary { border-bottom: 1px solid #eeeae5; }
+.faq details p { margin: 0; padding: 16px 22px 20px 22px; }
+
+/* ---------- 20. BACK TO TOP BUTTON ---------- */
+.to-top {
+  position: fixed;                   
+  right: 20px;
+  bottom: 20px;
+  width: 52px;
+  height: 52px;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 52px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s, transform 0.2s;
+  z-index: 20;
+}
+.to-top:hover { background: var(--red-dark); transform: translateY(-4px); }
+
+@media (max-width: 800px) {
+  .quote p { font-size: 1.8rem; }
+  .stats strong { font-size: 2.4rem; }
+}
+
+/* ---------- 21. EVENT HIGHLIGHTS (photo cards) ---------- */
+.highlights-title { margin-top: 70px; }
+.highlights-sub { margin: 0 0 8px 0; color: #4a4542; }
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.highlight {
+  flex: 1 1 380px;                    
+  margin: 0;                         
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.highlight:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.highlight img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;                
+  object-position: center 60%;        
+  display: block;
+}
+
+.highlight figcaption { padding: 22px; }
+.highlight h4 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: normal; margin: 8px 0; }
+.highlight p { margin: 0; }
+
+.tag {                           
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 20px;
+}
